@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db'); // Make sure this path is correct for your setup
 const clientRoutes = require('./routes/clientRoutes'); // Correct spelling: clientRoutes
 const franchiseRoutes=require('./routes/franchiseRoutes')
+const JobPostingRoutes=require('./routes/JobPostingRoutes')
 const cors = require('cors');
 
 dotenv.config();
@@ -28,6 +29,10 @@ console.log('Client routes loaded');
 // Client routes
 app.use('/api',franchiseRoutes)
 console.log('franchise routes loaded');
+
+// Job Posting Form
+app.use('/api', JobPostingRoutes)
+console.log('Job Posting Form routes loaded');
 
 
 // Base route
